@@ -1,19 +1,20 @@
+import pandas as pd
+
 import numpy as np
 
-data_type= [("name",'S15'),("class",int),("height",float)]
+exam_data = {
 
-student_details= [
-    ("James",5,48.5),
-    ("Nail",6,52.5),
-    ("Paul",5,60.5),
-    ("Pit",5,48.2)
+'name': ['Anastasia', 'Dima', 'Katherine', 'James', 'Emily', 'Michael', 'Matthew', 'Laura', 'Kevin', 'Jonas'],
 
-]
+'score': [12.5, 9, 16.5, np.nan, 9, 20, 14.5, np.nan, 8, 19],
 
-student= np.array(student_details,dtype=data_type)
+'attempts': [1, 3, 2, 3, 2, 3, 1, 1, 2, 1],
 
-print("Original Array")
-print(student)
+'qualify': ['yes', 'no', 'yes', 'no', 'no', 'yes', 'yes', 'no', 'no', 'yes']
 
-print("Sorted by height")
-print(np.sort(student,order= "height"))
+
+}
+labels = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+
+df=pd.DataFrame(exam_data,index=labels)
+print(df.info())
